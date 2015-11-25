@@ -33,4 +33,8 @@ Route::group(array('prefix' => 'api'), function() {
 			'as' => 'api-auth-check', 'uses' => 'ApiV1Controller@authCheck'
 		]);
 
+	Route::get('get/stories', [
+			'as' => 'api-get-stories', 'uses' => 'ApiV1Controller@getStories'
+		]);
+
 });

@@ -1,7 +1,8 @@
 var ngArtisan = angular.module('ngArtisan', [
 		'ngRoute',
 		'HomeController',
-		'AboutController' 
+		'AboutController',
+		'StoryService' 
 	]);
 
 

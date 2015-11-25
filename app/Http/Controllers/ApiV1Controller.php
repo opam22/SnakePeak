@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use App\Story;
 
 class ApiV1Controller extends Controller
 {
@@ -22,6 +23,13 @@ class ApiV1Controller extends Controller
     	else{
     		return 0;
     	}
+    }
+
+    public function getStories()
+    {
+    	$stories = Story::with('user')->get();
+
+    	return $stories;
     }
 
 }
