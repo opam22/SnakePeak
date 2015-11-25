@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('ng-adm', [
+		'as' => 'admin-login', 'uses' => 'AdminLoginController@index'
+	]);
+Route::post('ng-adm', [
+		'as' => 'admin-login-do', 'uses' => 'AdminLoginController@doLogin'
+	]);
+
+Route::get('ng-adm/logout', [
+		'as' => 'admin-logout', 'uses' => 'AdminLogoutController@doLogout'
+	]);
+
+
+Route::group(array('prefix' => 'api'), function() {
+
+	Route::get('auth/check', [
+			'as' => 'api-auth-check', 'uses' => 'ApiV1Controller@authCheck'
+		]);
+
+});
