@@ -1,0 +1,46 @@
+<!doctype html> 
+<html lang="en" ng-app="ngArtisan"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>ngArtisan CMS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <link rel="stylesheet" type="text/css" href="/sweet_alert/sweetalert.css">
+    
+    <script src="/ng-module//angular.min.js"></script> <!-- load our angular core -->
+    <script src="/ng-module/angular-route.min.js"></script> <!-- load our angular route -->
+
+    <!-- include controllers -->
+    <script src="ng-controller/HomeController.js"></script>
+    <script src="ng-controller/AboutController.js"></script>
+
+    
+    <!-- load our core home side application -->
+    <script src="app.js"></script>
+    
+
+</head> 
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/">ngArtisan</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="#/">Home</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="container" ng-view="">
+        <!-- render view dari folder partials -->
+    </div>
+
+</body> 
+</html>

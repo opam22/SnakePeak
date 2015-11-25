@@ -11,7 +11,9 @@ use Auth;
 class ApiV1Controller extends Controller
 {
     
-
+	/**
+	 * used to check wheter a user is logged in or not
+	 */
     public function authCheck()
     {
     	if (Auth::user()) {
