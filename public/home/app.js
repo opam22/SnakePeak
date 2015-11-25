@@ -1,5 +1,6 @@
 var ngArtisan = angular.module('ngArtisan', [
 		'ngRoute',
+		'truncate',
 		'HomeController',
 		'AboutController',
 		'StoryService' 

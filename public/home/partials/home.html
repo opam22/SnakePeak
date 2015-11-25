@@ -3,7 +3,8 @@
 <div class="col-md-8" ng-repeat="story in stories">
 
 	<h1>{{ story.title }}</h1>
-	<p>{{ story.content }}</p>
+	<p> {{ story.content | words:250 }} </p>
+	<a href="" class="btn btn-danger">Read more</a>
 	
 
 </div>
