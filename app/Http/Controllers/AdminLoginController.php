@@ -11,7 +11,16 @@ use Auth;
 use App\User;
 
 class AdminLoginController extends Controller
-{
+{	
+
+	/**
+	 * middleware for user authentication
+	 * only user who haven't logged in that can access this controller
+	 */
+	public function __construct()
+	{
+		return $this->middleware('guest');
+	}
     
     /**
      * used to handle request to login page
@@ -39,7 +48,7 @@ class AdminLoginController extends Controller
     	
     	if(Auth::attempt($credentials)){
     	    
-    	      return redirect('/');
+    	      return redirect('adm/#/');
 
     	}
     	else{

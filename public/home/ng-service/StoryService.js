@@ -1,6 +1,6 @@
 angular.module('StoryService', [])
 
-.factory('Story', function($http) {
+.service('Story', function($http) {
 
     return {
         // get all the stories

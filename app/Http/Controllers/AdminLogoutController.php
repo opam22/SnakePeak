@@ -27,7 +27,7 @@ class AdminLogoutController extends Controller
     {
     	Auth::logout();
 
-    	return redirect('/');
+    	return redirect('home/#/');
   
     }
 

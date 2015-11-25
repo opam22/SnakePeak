@@ -9,17 +9,19 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
     <link rel="stylesheet" type="text/css" href="/sweet_alert/sweetalert.css">
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
     <script src="/ng-module//angular.min.js"></script> <!-- load our angular core -->
     <script src="/ng-module/angular-route.min.js"></script> <!-- load our angular route -->
     <script src="/ng-module/angular-truncate.js"></script> <!-- load our angular truncate for (read more function) https://github.com/sparkalow/angular-truncate -->
 
 
     <!-- include controllers -->
-    <script src="ng-controller/HomeController.js"></script>
-    <script src="ng-controller/AboutController.js"></script>
+    <script src="ng-controller/DashboardController.js"></script>
+    <script src="ng-controller/LogoutController.js"></script>
 
     <!-- include services -->
-    <script src="ng-service/StoryService.js"></script>
+    <script src="ng-service/LogoutService.js"></script>
     
     <!-- load our core home side application -->
     <script src="app.js"></script>
@@ -36,7 +38,8 @@
     <div>
       <ul class="nav navbar-nav">
         <li><a href="#/">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about">Stories</a></li>
+        <li><a href="/ng-adm/logout">logout</a></li>
       </ul>
     </div>
   </div>
