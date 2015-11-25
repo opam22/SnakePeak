@@ -7,10 +7,14 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="/css/material.min.css">
     <link rel="stylesheet" type="text/css" href="/sweet_alert/sweetalert.css">
+    <script type="text/javascript" src="/js/material.min.js"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
+
     <script src="/ng-module//angular.min.js"></script> <!-- load our angular core -->
     <script src="/ng-module/angular-route.min.js"></script> <!-- load our angular route -->
     <script src="/ng-module/angular-truncate.js"></script> <!-- load our angular truncate for (read more function) https://github.com/sparkalow/angular-truncate -->
@@ -30,24 +34,40 @@
 </head> 
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#/">ngArtisan</a>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-        <li><a href="#/">Home</a></li>
-        <li><a href="#about">Stories</a></li>
-        <li><a href="/ng-adm/logout">logout</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-    <div class="container" ng-view="">
-        <!-- render view dari folder partials -->
+  <!-- NAVBAR -->
+  <header class="mdl-layout__header" style="fill:rgb(0, 188, 212);">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">ngArtisan</span>
+      <!-- Add spacer, to align navigation to the right -->
+      
     </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#/">Home</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="/ng-adm/logout">Logout</a>
+    </nav>
+  </div>
+  <!-- END OF NAVBAR -->
+
+  <main class="mdl-layout__content">
+    <div class="page-content">
+        <!-- Your content goes here -->
+          
+        <div class="mdl-grid" ng-view="">
+
+        
+          
+        </div>
+
+  </main>
+
+</div>
 
 </body> 
 </html>
