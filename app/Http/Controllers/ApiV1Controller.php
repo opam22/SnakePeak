@@ -31,7 +31,7 @@ class ApiV1Controller extends Controller
      */
     public function getStories()
     {
-    	$stories = Story::with('user')->get();
+    	$stories = Story::with('user')->where('status', '<>', 'draft')->where('status', '<>', 'trash')->get();
 
     	return $stories;
     }
@@ -167,4 +167,16 @@ class ApiV1Controller extends Controller
 
     }
 
+    public function getStory($id)
+    {
+    	$story = Story::findOrFail($id);
+
+    	$views = $story->view;
+
+    	$incrementViews = $views + 1;
+
+    	$story->update(['view' => $incrementViews]);
+
+    	return $story;
+    }
 }

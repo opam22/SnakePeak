@@ -7,6 +7,11 @@ angular.module('StoryService', [])
         get: function () {
             return $http.get('http://ng-artisan.lc/api/get/stories');
         },
+
+        //used to get story
+        see: function (story_id) {
+            return $http.get('http://ng-artisan.lc/api/get/story/'+story_id);
+        },
     }
 
-});
+}); 
