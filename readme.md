@@ -1,6 +1,7 @@
 ## ng-Artisan CMS
 
 ng-Artisan is a content management system that build from Angular.js, Laravel, Bootstrap & Material Design Lite.
+We call this A-SPA (Almost-Single Page Application).
 This open source project is belong to Iris Team.
 
 ## The Team
