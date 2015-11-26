@@ -1,10 +1,10 @@
-<div ng-show="storyLoading" class="mdl-cell mdl-cell--11-col mdl-cell--10-col-tablet" style="margin-top:200px;">
+<div ng-show="storyLoading" class="mdl-cell mdl-cell--11-col mdl-cell--10-col-tablet" style="margin-top:150px; margin-bottom:50px;">
 	<center>
-		<div class="mdl-spinner mdl-js-spinner is-active" style="margin-top:250px"></div>
+		<div class="mdl-spinner mdl-js-spinner is-active"></div>
 	</center>
 </div>
 
-	<div ng-hide="storyLoading" class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
+<div ng-hide="storyLoading" class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
 
 		<div ng-hide="storyLoading" class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" ng-repeat="story in stories">
 			<h1>{{ story.title }}</h1>
@@ -13,4 +13,4 @@
 		</div>
 
 
-	</div>
+</div>
