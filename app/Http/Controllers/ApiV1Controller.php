@@ -179,4 +179,19 @@ class ApiV1Controller extends Controller
 
     	return $story;
     }
+
+    public function loveStory($id)
+    {
+        $story = Story::findOrFail($id);
+
+        $love = $story->love;
+
+        $incrementLove = $love + 1;
+
+        $story->update(['love' => $incrementLove]);
+
+        $respons = ['success' => true];
+
+        return $respons;
+    }
 }

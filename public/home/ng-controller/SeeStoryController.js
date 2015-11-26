@@ -4,6 +4,7 @@ angular.module('SeeStoryController', [])
 
 
                 $scope.storyLoading = true;
+                $scope.loved = false;
                
                 /**
                  * used to get story data
@@ -17,5 +18,14 @@ angular.module('SeeStoryController', [])
                             $scope.storyLoading = false;
                             console.log($scope.stories);
                         });
+
+                $scope.love = function (story_id) {
+
+                        Story.love(story_id)
+                            .success(function (response) {
+                                $scope.loved = true;
+                            })
+
+                };
 
 });

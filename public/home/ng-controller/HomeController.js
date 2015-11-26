@@ -4,15 +4,15 @@ angular.module('HomeController', [])
 
 				$scope.storyLoading = true;
                
-                /**
-                 * used to get story data
-                 * use function from StoryService
-                 */
-        	    Story.get()
-        	        .success(function (response) {
-        	            $scope.stories = response;
-        	            $scope.storyLoading = false;
-        	            console.log($scope.stories);
-        	        });
+        /**
+         * used to get story data
+         * use function from StoryService
+         */       
+        Story.get()
+            .success(function (response) {
+        	$scope.stories = response;
+                $scope.storyLoading = false;
+         });
+
 
 });

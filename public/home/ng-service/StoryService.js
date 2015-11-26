@@ -12,6 +12,11 @@ angular.module('StoryService', [])
         see: function (story_id) {
             return $http.get('http://ng-artisan.lc/api/get/story/'+story_id);
         },
+
+        //used to love story
+        love: function (story_id) {
+            return $http.get('http://ng-artisan.lc/api/love/story/'+story_id);
+        },
     }
 
 }); 

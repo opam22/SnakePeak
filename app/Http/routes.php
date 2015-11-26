@@ -39,6 +39,9 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::get('get/story/{id}', [
 			'as' => 'api-get-story', 'uses' => 'ApiV1Controller@getStory'
 		]);
+	Route::get('love/story/{id}', [
+			'as' => 'api-love-story', 'uses' => 'ApiV1Controller@loveStory'
+		]);
 	Route::get('get/stories', [
 			'as' => 'api-get-stories', 'uses' => 'ApiV1Controller@getStories'
 		]);

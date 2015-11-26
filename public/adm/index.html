@@ -1,19 +1,24 @@
 <!doctype html> 
-<html lang="en" ng-app="ngArtisan"> 
+<html lang="en" ng-app="ngArtisanAdm"> 
 <head> 
 <meta charset="UTF-8"> 
 <title>ngArtisan CMS</title>
 
-    <!-- CSS -->
+    <!-- load bootstrap -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-
+    <!-- load fontawesome -->
+    <link rel="stylesheet" type="text/css" href="/font-awesome-4.5.0/css/font-awesome.min.css">
+    
+    <!-- load material design lite -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="/css/material.min.css">
+    <script type="text/javascript" src="/js/material.min.js"></script>
+
+    <!-- load sweet alert -->
     <link rel="stylesheet" type="text/css" href="/sweet_alert/sweetalert.css">
     
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="/sweet_alert/sweetalert.min.js"></script>
 
     <script src="/ng-module//angular.min.js"></script> <!-- load our angular core -->
@@ -22,14 +27,12 @@
 
     <!-- include controllers -->
     <script src="ng-controller/DashboardController.js"></script>
-    <script src="ng-controller/LogoutController.js"></script>
     <script src="ng-controller/CreateStoryController.js"></script>
     <script src="ng-controller/YourStoriesController.js"></script>
     <script src="ng-controller/EditStoryController.js"></script>
 
 
     <!-- include services -->
-    <script src="ng-service/LogoutService.js"></script>
     <script src="ng-service/StoryService.js"></script>
 
     
@@ -37,13 +40,13 @@
     <script src="app.js"></script>
     
     
-
+    <!-- include depedency for wysiwyg text editor -->
     <link rel='stylesheet' href='/textAngular/textAngular.css'>
     <script src='/textAngular/textAngular-rangy.min.js'></script>
     <script src='/textAngular/textAngular-sanitize.min.js'></script>
     <script src='/textAngular/textAngular.min.js'></script>
 
-    <script type="text/javascript" src="/js/material.min.js"></script>
+    
     
 </head> 
 <body>
@@ -123,7 +126,7 @@ var doLogout = function () {
         function(){
           window.location.href = '/ng-adm/logout';
         });
-    }
+    };
 
 </script>
 

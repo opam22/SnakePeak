@@ -1,10 +1,8 @@
-var ngArtisan = angular.module('ngArtisan', [
+var ngArtisanAdm = angular.module('ngArtisanAdm', [
 		'ngRoute',
 		'truncate',
 		'textAngular',
 		'DashboardController',
-		'LogoutController',
-		'LogoutService',
 		'CreateStoryController',
 		'StoryService',
 		'YourStoriesController',
@@ -12,7 +10,7 @@ var ngArtisan = angular.module('ngArtisan', [
 	]);
 
 
-ngArtisan.config(function ($routeProvider) {
+ngArtisanAdm.config(function ($routeProvider) {
 	$routeProvider
 		.when('/', 
 			{
@@ -42,7 +40,7 @@ ngArtisan.config(function ($routeProvider) {
 });
 
 
-ngArtisan.run(function ($rootScope){
+ngArtisanAdm.run(function ($rootScope){
 
     $rootScope.authCheck = function() {
         var result = $.ajax({
