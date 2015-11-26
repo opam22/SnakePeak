@@ -25,6 +25,10 @@ class ApiV1Controller extends Controller
     	}
     }
 
+    /**
+     * get all the stories
+     * @return [json] [description]
+     */
     public function getStories()
     {
     	$stories = Story::with('user')->get();
@@ -32,6 +36,22 @@ class ApiV1Controller extends Controller
     	return $stories;
     }
 
+    /**
+     * get all the stories of mine
+     * @return [json] [description]
+     */
+    public function getStoriesMine()
+    {
+    	$stories = Story::with('user')->where('user_id', Auth::user()->id)->where('status', '<>', 'trash')->get();
+
+    	return $stories;
+    }
+
+    /**
+     * used to create new story with published status
+     * @param  Request $request [description]
+     * @return [json]           [description]
+     */
     public function createStory(Request $request)
     {
     	$input = $request->all();
@@ -46,6 +66,11 @@ class ApiV1Controller extends Controller
    	
     }
 
+    /**
+     * used to create new story with draft status
+     * @param  Request $request [description]
+     * @return [json]           [description]
+     */
     public function createStoryAsDraft(Request $request)
     {
     	$input = $request->all();
@@ -58,8 +83,88 @@ class ApiV1Controller extends Controller
 
     	return $respons;
 
+    }
 
+    /**
+     * used to get story that user want to edit
+     * do auth
+     * if user_id is not same with auth::user()->id
+     * then fail
+     * @param  [type] $id [description]
+     * @return [json]     [description]
+     */
+    public function getEditStory($id)
+    {
+    	$story = Story::findOrFail($id);
+
+    	if ($story['user_id'] != Auth::user()->id) {
+    		
+    		return 0;
+
+    	}
+    	else{
+    		return $story;
+    	}
     	
+    }
+
+    /**
+     * used to edit story
+     * @param  Request $request [description]
+     * @return [json]           [description]
+     */
+    public function editStory(Request $request)
+    {
+    	$story = Story::findOrFail($request->input('id'));
+
+    	$input = $request->all();
+
+    	$story->update($input);
+
+    	$respons = ['success' => true];
+
+    	return $respons;
+
+    }
+
+    /**
+     * used to change status story from draft to published
+     * @param  [type] $id [description]
+     * @return [json]     [description]
+     */
+    public function publishStory($id)
+    {
+    	$story = Story::findOrFail($id);
+
+    	$input = ['status' => 'published'];
+
+    	$story->update($input);
+
+    	$respons = ['success' => true];
+
+    	return $respons;
+
+    }
+
+    /**
+     * used to change status story to trash
+     * it means user move to trahs their story
+     * soft delete
+     * @param  [type] $id [description]
+     * @return [json]     [description]
+     */
+    public function trashStory($id)
+    {
+    	$story = Story::findOrFail($id);
+
+    	$input = ['status' => 'trash'];
+
+    	$story->update($input);
+
+    	$respons = ['success' => true];
+
+    	return $respons;
+
     }
 
 }

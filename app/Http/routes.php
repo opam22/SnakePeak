@@ -33,6 +33,9 @@ Route::group(array('prefix' => 'api'), function() {
 			'as' => 'api-auth-check', 'uses' => 'ApiV1Controller@authCheck'
 		]);
 
+	Route::get('get/stories/mine', [
+			'as' => 'api-get-stories-mine', 'uses' => 'ApiV1Controller@getStoriesMine'
+		]);
 	Route::get('get/stories', [
 			'as' => 'api-get-stories', 'uses' => 'ApiV1Controller@getStories'
 		]);
@@ -41,6 +44,18 @@ Route::group(array('prefix' => 'api'), function() {
 		]);
 	Route::post('create/story/draft', [
 			'as' => 'api-create-story', 'uses' => 'ApiV1Controller@createStoryAsDraft'
+		]);
+	Route::get('get/edit/story/{id}', [
+			'as' => 'api-get-edit-story', 'uses' => 'ApiV1Controller@getEditStory'
+		]);
+	Route::get('get/publish/story/{id}', [
+			'as' => 'api-get-publish-story', 'uses' => 'ApiV1Controller@publishStory'
+		]);
+	Route::get('get/trash/story/{id}', [
+			'as' => 'api-get-trash-story', 'uses' => 'ApiV1Controller@trashStory'
+		]);
+	Route::post('edit/story', [
+			'as' => 'api-edit-story', 'uses' => 'ApiV1Controller@editStory'
 		]);
 
 });

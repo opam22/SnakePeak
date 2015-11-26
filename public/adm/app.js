@@ -6,7 +6,9 @@ var ngArtisan = angular.module('ngArtisan', [
 		'LogoutController',
 		'LogoutService',
 		'CreateStoryController',
-		'StoryService'
+		'StoryService',
+		'YourStoriesController',
+		'EditStoryController'
 	]);
 
 
@@ -21,6 +23,16 @@ ngArtisan.config(function ($routeProvider) {
 			{
 				controller: 'CreateStoryController',
 				templateUrl: 'partials/create_story.html'
+			})
+		.when('/your-stories', 
+			{
+				controller: 'YourStoriesController',
+				templateUrl: 'partials/your_stories.html'
+			})
+		.when('/edit/story/:storyId', 
+			{
+				controller: 'EditStoryController',
+				templateUrl: 'partials/edit_story.html'
 			})
 		.when('/logout', 
 			{

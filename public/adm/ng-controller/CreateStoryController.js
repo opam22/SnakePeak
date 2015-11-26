@@ -9,7 +9,7 @@ angular.module('CreateStoryController', [])
 
         $scope.tagline = 'Create Story';
 
-
+        //used to create story with published status
         $scope.submitPublisedStory = function () {
 
         	console.log($scope.createStory);
@@ -30,6 +30,7 @@ angular.module('CreateStoryController', [])
 
         };
 
+        //used to create story with draft status
         $scope.submitDraftStory = function () {
 
         	console.log($scope.createStory);
