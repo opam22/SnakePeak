@@ -5,20 +5,20 @@ This open source project is belong to Iris Team.
 
 ## The Team
 
-- Ara Koswara
-- Arya Kusuma
-- Derma Putra Waruwu
-- Harish Adrian R.
-- Krisman Nazara
-- Pramesti Hatta K.
-- Zufar Fatih Suhandi
+- [Ara Koswara](https://www.facebook.com/arakoswaraa)
+- [Arya Kusuma](https://www.facebook.com/aryakusuma77)
+- [Derma Putra Waruwu](https://www.facebook.com/nlife.djpwaruwu)
+- [Harish Adrian R.](https://www.facebook.com/harish.adrian)
+- [Krisman Nazara](https://www.facebook.com/KrismanNazara13)
+- [Pramesti Hatta K.](https://facebook.com/opam22)
+- [Zufar Fatih Suhandi](https://www.facebook.com/ZufarFS)
 
 ## Installation
 
 1. Composer install
-2. setting your .env file
+2. Setting your .env file
 3. php artisan migrate
-4. enjoy :)
+4. Enjoy :)
 
 
 ### License
