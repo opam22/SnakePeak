@@ -32,4 +32,34 @@ class ApiV1Controller extends Controller
     	return $stories;
     }
 
+    public function createStory(Request $request)
+    {
+    	$input = $request->all();
+    	$input['user_id'] = Auth::user()->id;
+    	$input['status'] = 'published';
+
+    	Story::create($input);
+
+    	$respons = ['success' => true];
+
+    	return $respons;
+   	
+    }
+
+    public function createStoryAsDraft(Request $request)
+    {
+    	$input = $request->all();
+    	$input['user_id'] = Auth::user()->id;
+    	$input['status'] = 'draft';
+
+    	Story::create($input);
+
+    	$respons = ['success' => true];
+
+    	return $respons;
+
+
+    	
+    }
+
 }

@@ -36,5 +36,11 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::get('get/stories', [
 			'as' => 'api-get-stories', 'uses' => 'ApiV1Controller@getStories'
 		]);
+	Route::post('create/story', [
+			'as' => 'api-create-story', 'uses' => 'ApiV1Controller@createStory'
+		]);
+	Route::post('create/story/draft', [
+			'as' => 'api-create-story', 'uses' => 'ApiV1Controller@createStoryAsDraft'
+		]);
 
 });

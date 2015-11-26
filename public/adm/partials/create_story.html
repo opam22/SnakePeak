@@ -1,0 +1,58 @@
+
+<div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet"></div>
+
+<div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet" ng-show="createStoryLoading">
+		<center>
+			<div class="mdl-spinner mdl-js-spinner is-active" style="margin-top:250px"></div>
+		</center>
+</div>
+
+<div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet" ng-hide="createStoryLoading">
+	<h3> {{ tagline }}</h3>
+	
+	<form >
+
+	  <div class="mdl-textfield mdl-js-textfield">
+	    <input class="mdl-textfield__input" type="text" ng-model="createStory.title">
+	    <label class="mdl-textfield__label" for="sample1">Title...</label>
+	  </div>
+		
+
+	 	<br>
+
+	  <label>Main Image</label>
+	  <input type="file" class="form-control">
+
+	    <br>
+
+	    <text-angular {{ htmlVariable }} ng-model="createStory.content"></text-angular>
+
+	    <br>
+		
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="submitPublisedStory()">
+		  Publish
+		</button>
+		<!-- Accent-colored raised button -->
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" ng-click="submitDraftStory()">
+		  Save as Draft
+		</button>
+
+	</form>
+
+</div>
+
+
+
+
+<!-- ADD BUTTON -->
+
+<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet" ng-show="buttonAdd">
+    <center>
+        <!-- Colored FAB button with ripple -->
+        <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" href="#/create/story">
+          <i class="material-icons">add</a></i>
+        </a>
+    </center>
+
+</div>
+

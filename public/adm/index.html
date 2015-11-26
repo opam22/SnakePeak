@@ -11,26 +11,37 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="/css/material.min.css">
     <link rel="stylesheet" type="text/css" href="/sweet_alert/sweetalert.css">
-    <script type="text/javascript" src="/js/material.min.js"></script>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/sweet_alert/sweetalert.min.js"></script>
 
     <script src="/ng-module//angular.min.js"></script> <!-- load our angular core -->
     <script src="/ng-module/angular-route.min.js"></script> <!-- load our angular route -->
     <script src="/ng-module/angular-truncate.js"></script> <!-- load our angular truncate for (read more function) https://github.com/sparkalow/angular-truncate -->
 
-
     <!-- include controllers -->
     <script src="ng-controller/DashboardController.js"></script>
     <script src="ng-controller/LogoutController.js"></script>
+    <script src="ng-controller/CreateStoryController.js"></script>
 
     <!-- include services -->
     <script src="ng-service/LogoutService.js"></script>
+    <script src="ng-service/StoryService.js"></script>
+
     
     <!-- load our core home side application -->
     <script src="app.js"></script>
     
+    
 
+    <link rel='stylesheet' href='/textAngular/textAngular.css'>
+    <script src='/textAngular/textAngular-rangy.min.js'></script>
+    <script src='/textAngular/textAngular-sanitize.min.js'></script>
+    <script src='/textAngular/textAngular.min.js'></script>
+
+    <script type="text/javascript" src="/js/material.min.js"></script>
+    
 </head> 
 <body>
 
@@ -48,26 +59,70 @@
   </header>
   <div class="mdl-layout__drawer">
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="#/">Home</a>
+      <a class="mdl-navigation__link" href="#/">Dashboard</a>
       <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="/ng-adm/logout">Logout</a>
+      <a class="mdl-navigation__link" onclick="doLogout()" href="#">Logout</a>
     </nav>
   </div>
   <!-- END OF NAVBAR -->
-
+    
+    <!-- MAIN  -->
   <main class="mdl-layout__content">
     <div class="page-content">
         <!-- Your content goes here -->
           
         <div class="mdl-grid" ng-view="">
 
-        
           
         </div>
 
+       
   </main>
+  <!-- END OF MAIN -->
+    
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
+            <!-- Colored FAB button with ripple -->
+            <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored pull-right" href="#/create/story" style="margin-right:20px">
+              <i class="material-icons">add</a></i>
+            </a>
 
+    </div>
+   
+
+    <!-- FOOTER -->
+        <footer class="mdl-mega-footer">
+          
+
+          <div class="mdl-mega-footer__bottom-section">
+            <div class="mdl-logo">Made with Love by Iris Indonesia</div>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Privacy & Terms</a></li>
+            </ul>
+          </div>
+
+        </footer>
+    <!-- END OF FOOTER -->
 </div>
+
+
+<script type="text/javascript">
+    
+var doLogout = function () {
+        swal({
+          title: "Are you sure?",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: '#DD6B55',
+          confirmButtonText: 'Yes, I wanna log out!',
+          closeOnConfirm: false
+        },
+        function(){
+          window.location.href = '/ng-adm/logout';
+        });
+    }
+
+</script>
 
 </body> 
 </html>

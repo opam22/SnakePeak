@@ -21,6 +21,7 @@ class CreateStoriesTable extends Migration
             $table->string('photo');
             $table->integer('view');
             $table->integer('love');
+            $table->string('status');
             $table->timestamps();
         });
     }

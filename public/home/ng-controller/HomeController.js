@@ -2,8 +2,8 @@ angular.module('HomeController', [])
 
 .controller('HomeController', function($scope, Story, $http) {
 
-        $scope.tagline = 'HOME';
-
+				$scope.storyLoading = true;
+               
                 /**
                  * used to get story data
                  * use function from StoryService
@@ -11,6 +11,7 @@ angular.module('HomeController', [])
         	    Story.get()
         	        .success(function (response) {
         	            $scope.stories = response;
+        	            $scope.storyLoading = false;
         	            console.log($scope.stories);
         	        });
 

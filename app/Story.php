@@ -8,10 +8,13 @@ class Story extends Model
 {
     
 	protected $fillable = [
-		'name', 
-		'email', 
-		'password', 
-		'photo'
+		'title', 
+		'user_id',
+		'content',
+		'photo',
+		'view',
+		'love',
+		'status'
 	];
 
 	public function user()

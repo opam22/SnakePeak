@@ -1,9 +1,12 @@
 var ngArtisan = angular.module('ngArtisan', [
 		'ngRoute',
 		'truncate',
+		'textAngular',
 		'DashboardController',
 		'LogoutController',
-		'LogoutService'
+		'LogoutService',
+		'CreateStoryController',
+		'StoryService'
 	]);
 
 
@@ -12,7 +15,12 @@ ngArtisan.config(function ($routeProvider) {
 		.when('/', 
 			{
 				controller: 'DashboardController',
-				templateUrl: 'partials/home.html'
+				templateUrl: 'partials/dashboard.html'
+			})
+		.when('/create/story', 
+			{
+				controller: 'CreateStoryController',
+				templateUrl: 'partials/create_story.html'
 			})
 		.when('/logout', 
 			{
@@ -32,4 +40,27 @@ ngArtisan.run(function ($rootScope){
         return result;
     };
 
+
+    /*USED TO MATERIAL DESIGN LITE*/
+    var mdlUpgradeDom = false;
+        setInterval(function() {
+          if (mdlUpgradeDom) {
+            componentHandler.upgradeDom();
+            mdlUpgradeDom = false;
+          }
+        }, 200);
+
+        var observer = new MutationObserver(function () {
+          mdlUpgradeDom = true;
+        });
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+        /* support <= IE 10
+        angular.element(document).bind('DOMNodeInserted', function(e) {
+            mdlUpgradeDom = true;
+        });
+        */
+       
 });
