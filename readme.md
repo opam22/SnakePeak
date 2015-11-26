@@ -14,6 +14,16 @@ This open source project is belong to Iris Team.
 - [Pramesti Hatta K.](https://facebook.com/opam22)
 - [Zufar Fatih Suhandi](https://www.facebook.com/ZufarFS)
 
+## Technologies
+* Laravel 5.1
+* Angular.js 1.4.8
+* textAngular
+* SweetAlert
+* Bootstrap
+* Material Design Lite
+* Font Awesome
+* jQuery
+
 ## Installation
 
 1. Composer install
