@@ -24,12 +24,19 @@ This open source project is belong to Iris Team.
 * Font Awesome
 * jQuery
 
+## Requirements
+
+- PHP >= 5.5.9
+
 ## Installation
 
-1. Composer install
-2. Setting your .env file
-3. php artisan migrate
-4. Enjoy :)
+Make sure you already install composer on your machine.
+
+1. cd ng-Angular
+2. Composer install
+3. Make/setting your own .env
+4. php artisan migrate
+5. Enjoy :)
 
 
 ### License
