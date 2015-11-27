@@ -33,7 +33,7 @@ This open source project is belong to Iris Team.
 
 Make sure you already install composer on your machine.
 
-1. cd ng-Angular
+1. cd ng-Artisan
 2. Composer install
 3. Make/setting your own .env
 4. php artisan migrate
