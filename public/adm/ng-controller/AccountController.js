@@ -1,6 +1,6 @@
-angular.module('DashboardController', [])
+angular.module('AccountController', [])
 
-.controller('DashboardController', function($scope, $http, $rootScope) {
+.controller('AccountController', function($scope, $http, $rootScope) {
 
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {

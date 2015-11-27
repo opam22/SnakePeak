@@ -8,9 +8,9 @@
 </div>
 
 <div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet" ng-hide="createStoryLoading">
-	<h3> {{ tagline }}</h3>
+	<h3>Create Story</h3>
 	
-	<form >
+	<form>
 
 	  <div class="mdl-textfield mdl-js-textfield">
 	    <input class="mdl-textfield__input" type="text" ng-model="createStory.title">
@@ -21,7 +21,7 @@
 	 	<br>
 
 	  <label>Main Image</label>
-	  <input type="file" class="form-control">
+	  <input type="file" class="form-control" ng-model="createStory.photo" file-upload multiple>
 
 	    <br>
 

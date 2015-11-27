@@ -1,13 +1,17 @@
 angular.module('CreateStoryController', [])
 
-.controller('CreateStoryController', function($scope, $http, Story, $location) {
+.controller('CreateStoryController', function($scope, $http, Story, $location, $rootScope) {
 
+        //auth cek
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
             window.location.href = '/home';
         }
 
-        $scope.tagline = 'Create Story';
+        //get user data
+        var getAuthData = $scope.getAuthData();
+        $rootScope.authUser = getAuthData.responseJSON;
+
 
         //used to create story with published status
         $scope.submitPublisedStory = function () {

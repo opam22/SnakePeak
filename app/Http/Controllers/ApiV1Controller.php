@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use App\Story;
 use App\Comment;
+use App\User;
 
 class ApiV1Controller extends Controller
 {
@@ -24,6 +25,13 @@ class ApiV1Controller extends Controller
     	else{
     		return 0;
     	}
+    }
+
+    public function authData()
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+
+        return Auth::user();
     }
 
     /**
@@ -58,6 +66,9 @@ class ApiV1Controller extends Controller
     	$input = $request->all();
     	$input['user_id'] = Auth::user()->id;
     	$input['status'] = 'published';
+
+        $image = $request->file('photo');
+        $input['photo'] = $image->getClientOriginalName();
 
     	Story::create($input);
 

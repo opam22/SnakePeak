@@ -24,6 +24,7 @@
     <script src="/ng-module//angular.min.js"></script> <!-- load our angular core -->
     <script src="/ng-module/angular-route.min.js"></script> <!-- load our angular route -->
     <script src="/ng-module/angular-truncate.js"></script> <!-- load our angular truncate for (read more function) https://github.com/sparkalow/angular-truncate -->
+    <script src="/ng-module/ngUpload.min.js"></script>
 
     <!-- include controllers -->
     <script src="ng-controller/DashboardController.js"></script>
@@ -31,6 +32,7 @@
     <script src="ng-controller/YourStoriesController.js"></script>
     <script src="ng-controller/EditStoryController.js"></script>
     <script src="ng-controller/TrashController.js"></script>
+    <script src="ng-controller/AccountController.js"></script>
 
 
 
@@ -60,7 +62,7 @@
   <header class="mdl-layout__header" style="fill:rgb(0, 188, 212);">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">ngArtisan</span>
+      <span class="mdl-layout-title">{{ authUser.name }}</span>
       <!-- Add spacer, to align navigation to the right -->
       
     </div>
@@ -69,6 +71,7 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#/">Dashboard</a>
       <a class="mdl-navigation__link" href="#/your-stories">Your Stories</a>
+      <a class="mdl-navigation__link" href="#/account">Account</a>
       <a class="mdl-navigation__link" href="#/trash">Trash</a>
       <a class="mdl-navigation__link" onclick="doLogout()" href="">Logout</a>
     </nav>

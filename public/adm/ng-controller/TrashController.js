@@ -1,12 +1,16 @@
 angular.module('TrashController', [])
 
-.controller('TrashController', function($scope, $http, Story) {
+.controller('TrashController', function($scope, $http, Story, $rootScope) {
 
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
             window.location.href = '/home';
         }
 
+        //get user data
+        var getAuthData = $scope.getAuthData();
+        $rootScope.authUser = getAuthData.responseJSON;
+        
         $scope.loadStories = true;
 
         //get story with trash status of user

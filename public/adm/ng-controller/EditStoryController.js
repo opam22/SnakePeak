@@ -1,13 +1,15 @@
 angular.module('EditStoryController', [])
 
-.controller('EditStoryController', function($scope, $http, Story, $routeParams) {
+.controller('EditStoryController', function($scope, $http, Story, $routeParams, $rootScope) {
 
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
             window.location.href = '/home';
         }
 
-        $scope.tagline = 'Edit Story';
+        //get user data
+        var getAuthData = $scope.getAuthData();
+        $rootScope.authUser = getAuthData.responseJSON;
 
         $scope.editStoryLoading = true;
         $scope.saveEditButton = false;

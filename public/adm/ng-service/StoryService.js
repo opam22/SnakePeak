@@ -19,6 +19,7 @@ angular.module('StoryService', [])
         		method: 'POST',
         		url: '/api/create/story',
         		headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
+                contentType: 'multipart/form-data',
         		data: $.param(createStory),
                 async: true
         	});

@@ -1,13 +1,16 @@
 angular.module('YourStoriesController', [])
 
-.controller('YourStoriesController', function($scope, $http, Story) {
+.controller('YourStoriesController', function($scope, $http, Story, $rootScope) {
 
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
             window.location.href = '/home';
         }
 
-        $scope.tagline = 'Your Stories';
+        //get user data
+        var getAuthData = $scope.getAuthData();
+        $rootScope.authUser = getAuthData.responseJSON;
+        
         $scope.loadStories = true;
 
         //get user story

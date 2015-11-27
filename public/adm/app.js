@@ -7,7 +7,8 @@ var ngArtisanAdm = angular.module('ngArtisanAdm', [
 		'StoryService',
 		'YourStoriesController',
 		'EditStoryController',
-		'TrashController'
+		'TrashController',
+		'AccountController'
 	]);
 
 
@@ -17,6 +18,11 @@ ngArtisanAdm.config(function ($routeProvider) {
 			{
 				controller: 'DashboardController',
 				templateUrl: 'partials/dashboard.html'
+			})
+		.when('/account', 
+			{
+				controller: 'AccountController',
+				templateUrl: 'partials/account.html'
 			})
 		.when('/create/story', 
 			{
@@ -48,12 +54,22 @@ ngArtisanAdm.config(function ($routeProvider) {
 
 ngArtisanAdm.run(function ($rootScope){
 
+	//auth check
     $rootScope.authCheck = function() {
         var result = $.ajax({
             url: '/api/auth/check',
             async: false
         });
         return result;
+    };
+
+    //get authentication
+    $rootScope.getAuthData = function () {
+    	var data = $.ajax({
+    		url: '/api/auth/data',
+    		async:false
+    	});
+    	return data;
     };
 
 
