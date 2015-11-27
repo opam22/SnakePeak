@@ -69,5 +69,14 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::post('save/comment', [
 			'as' => 'api-save-comment', 'uses' => 'ApiV1Controller@saveComment'
 		]);
+	Route::get('get/trashes/mine', [
+			'as' => 'api-get-trashes-mine', 'uses' => 'ApiV1Controller@getTrashesMine'
+		]);
+	Route::get('empty/trash', [
+			'as' => 'api-empty-trashes-mine', 'uses' => 'ApiV1Controller@emptyTrash'
+		]);
+	Route::get('get/restore/story/{id}', [
+			'as' => 'api-restore-story', 'uses' => 'ApiV1Controller@restoreStory'
+		]);
 
 });

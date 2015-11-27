@@ -6,7 +6,8 @@ var ngArtisanAdm = angular.module('ngArtisanAdm', [
 		'CreateStoryController',
 		'StoryService',
 		'YourStoriesController',
-		'EditStoryController'
+		'EditStoryController',
+		'TrashController'
 	]);
 
 
@@ -31,6 +32,11 @@ ngArtisanAdm.config(function ($routeProvider) {
 			{
 				controller: 'EditStoryController',
 				templateUrl: 'partials/edit_story.html'
+			})
+		.when('/trash', 
+			{
+				controller: 'TrashController',
+				templateUrl: 'partials/trash.html'
 			})
 		.when('/logout', 
 			{

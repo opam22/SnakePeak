@@ -37,13 +37,11 @@ angular.module('EditStoryController', [])
 
             Story.editStory($scope.editStory)
                 .success(function (response) {
-                    console.log('berhasil');
                     $scope.createStoryLoading = false;
                     swal({   title: "Success!",   text: "Your story has been edited :)",   type: "success",   confirmButtonText: "Cool" });
                 
                 })
                 .error(function (responseText) {
-                    console.log(responseText);
                     swal({   title: "Error!",   text: responseText,   type: "error",   confirmButtonText: "OK" });
                 });
 

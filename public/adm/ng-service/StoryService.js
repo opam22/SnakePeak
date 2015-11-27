@@ -5,21 +5,22 @@ angular.module('StoryService', [])
     return {
         // get all the stories
         get: function () {
-            return $http.get('http://ng-artisan.lc/api/get/stories');
+            return $http.get('/api/get/stories');
         },
 
         // get all the stories of mine
         getMyStories: function () {
-            return $http.get('http://ng-artisan.lc/api/get/stories/mine');
+            return $http.get('/api/get/stories/mine');
         },
 
         //save story
         save: function (createStory) {
         	return $http({
         		method: 'POST',
-        		url: 'http://ng-artisan.lc/api/create/story',
+        		url: '/api/create/story',
         		headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-        		data: $.param(createStory)
+        		data: $.param(createStory),
+                async: true
         	});
         },
 
@@ -27,35 +28,52 @@ angular.module('StoryService', [])
         saveAsDraft: function (createStory) {
         	return $http({
         		method: 'POST',
-        		url: 'http://ng-artisan.lc/api/create/story/draft',
+        		url: '/api/create/story/draft',
         		headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-        		data: $.param(createStory)
+        		data: $.param(createStory),
+                async: true
         	});
         },
 
         // get story
         getStory: function (id) {
-            return $http.get('http://ng-artisan.lc/api/get/edit/story/'+id);
+            return $http.get('/api/get/edit/story/'+id);
         },
 
         // publish story (draft)
         publishStory: function (id) {
-            return $http.get('http://ng-artisan.lc/api/get/publish/story/'+id);
+            return $http.get('/api/get/publish/story/'+id);
         },
 
         // soft delete story 
         trashStory: function (id) {
-            return $http.get('http://ng-artisan.lc/api/get/trash/story/'+id);
+            return $http.get('/api/get/trash/story/'+id);
         },
 
         //edit story
         editStory: function (editStory) {
         	return $http({
         		method: 'POST',
-        		url: 'http://ng-artisan.lc/api/edit/story',
+        		url: '/api/edit/story',
         		headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-        		data: $.param(editStory)
+        		data: $.param(editStory),
+                async: true
         	});
+        },
+
+        // get all the trashed of mine
+        getMyTrash: function () {
+            return $http.get('/api/get/trashes/mine');
+        },
+
+        //empty trash
+        emptyTrash: function () {
+            return $http.get('/api/empty/trash');
+        },
+
+        // restore a story from trash
+        restore: function (id) {
+            return $http.get('/api/get/restore/story/'+id);
         },
     }
 

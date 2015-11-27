@@ -168,6 +168,12 @@ class ApiV1Controller extends Controller
 
     }
 
+    /**
+     * used to get story a user want to see
+     * increase view (+1)
+     * @param  [type] $id [description]
+     * @return [json]     [description]
+     */
     public function getStory($id)
     {
     	$story = Story::findOrFail($id);
@@ -181,6 +187,11 @@ class ApiV1Controller extends Controller
     	return $story;
     }
 
+    /**
+     * used to love a story
+     * @param  [type] $id [description]
+     * @return [json]     [description]
+     */
     public function loveStory($id)
     {
         $story = Story::findOrFail($id);
@@ -196,6 +207,11 @@ class ApiV1Controller extends Controller
         return $respons;
     }
 
+    /**
+     * used to get comments from the selected story
+     * @param  [type] $id [description]
+     * @return [json]     [description]
+     */
     public function getComments($id)
     {
         $comments = Comment::where('story_id', $id)->get();
@@ -203,6 +219,11 @@ class ApiV1Controller extends Controller
         return $comments;
     }
 
+    /**
+     * used to save comment
+     * @param  Request $request [description]
+     * @return [json]           [description]
+     */
     public function saveComment(Request $request)
     {
         $input = $request->all();
@@ -213,4 +234,46 @@ class ApiV1Controller extends Controller
 
         return $respons;
     }
+
+    /**
+     * get all the trashes of mine
+     * @return [json] [description]
+     */
+    public function getTrashesMine()
+    {
+        $trashes = Story::with('user')->where('user_id', Auth::user()->id)->where('status', 'trash')->get();
+
+        return $trashes;
+    }
+
+    /**
+     * used to delete all story with trash status
+     * @return [json] [description]
+     */
+    public function emptyTrash()
+    {
+        $trashes = Story::where('status', 'trash')->delete();
+
+        $respons = ['success' => true];
+
+        return $respons;
+    }
+
+    /**
+     * used to restore a story from trash
+     * @param  [type] $id [description]
+     * @return [json]     [description]
+     */
+    public function restoreStory($id)
+    {
+        $story = Story::findOrFail($id);
+
+        $story->update(['status' => 'draft']);
+
+        $respons = ['success' => true];
+
+        return $respons;
+
+    }
+
 }
