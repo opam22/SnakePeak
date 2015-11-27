@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\Story;
+use App\Comment;
 
 class ApiV1Controller extends Controller
 {
@@ -189,6 +190,24 @@ class ApiV1Controller extends Controller
         $incrementLove = $love + 1;
 
         $story->update(['love' => $incrementLove]);
+
+        $respons = ['success' => true];
+
+        return $respons;
+    }
+
+    public function getComments($id)
+    {
+        $comments = Comment::where('story_id', $id)->get();
+
+        return $comments;
+    }
+
+    public function saveComment(Request $request)
+    {
+        $input = $request->all();
+
+        Comment::create($input);
 
         $respons = ['success' => true];
 

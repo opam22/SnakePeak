@@ -63,5 +63,11 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::post('edit/story', [
 			'as' => 'api-edit-story', 'uses' => 'ApiV1Controller@editStory'
 		]);
+	Route::get('get/comments/{story_id}', [
+			'as' => 'api-get-comments', 'uses' => 'ApiV1Controller@getComments'
+		]);
+	Route::post('save/comment', [
+			'as' => 'api-save-comment', 'uses' => 'ApiV1Controller@saveComment'
+		]);
 
 });

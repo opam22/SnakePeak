@@ -5,7 +5,8 @@ var ngArtisan = angular.module('ngArtisan', [
 		'HomeController',
 		'AboutController',
 		'StoryService',
-		'SeeStoryController'
+		'SeeStoryController',
+		'CommentService'
 	]);
 
 

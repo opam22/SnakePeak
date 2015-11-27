@@ -9,7 +9,7 @@ class Comment extends Model
     
     protected $fillable = [
     	'story_id', 
-    	'name', 
+    	'nama', 
     	'comment'
     ];
 

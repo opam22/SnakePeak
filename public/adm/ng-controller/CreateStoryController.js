@@ -12,12 +12,10 @@ angular.module('CreateStoryController', [])
         //used to create story with published status
         $scope.submitPublisedStory = function () {
 
-        	console.log($scope.createStory);
         	$scope.createStoryLoading = true;
 
         	Story.save($scope.createStory)
         		.success(function (response) {
-        			console.log('berhasil');
         			$scope.createStoryLoading = false;
         			$scope.createStory = {};
         			swal({   title: "Success!",   text: "Your story has been published :)",   type: "success",   confirmButtonText: "Cool" });

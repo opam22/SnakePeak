@@ -1,4 +1,4 @@
-<div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col" style="padding:20px 20px; margin-top:20px;">
+<div class="mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col" style="padding:20px 20px; margin-top:20px;">
 
 	<div ng-hide="storyLoading">
 		<h3>{{ story.title }}</h3>
@@ -8,7 +8,51 @@
 		<a ng-hide="loved" ng-click="$event.preventDefault(); love(story.id)" href=""  class="text-muted"><span class="fa fa-heart-o fa-3x"></span></a>
 
 		<span class="fa fa-heart fa-3x" ng-show="loved"></span>
+
+		<h3>#comment</h3>
+
+		<form>
+
+		<!-- <input type="hidden" value="{{ story.id }}" ng-model="dataComment.story_id"> -->
+
+			  <div class="mdl-textfield mdl-js-textfield">
+			    <input class="mdl-textfield__input" type="text" ng-model="dataComment.nama" id="name">
+			    <label class="mdl-textfield__label" for="name">Name...</label>
+			  </div>
+
+			<br>
+
+			  <div class="mdl-textfield mdl-js-textfield">
+			      <textarea class="mdl-textfield__input" type="text" rows= "5" cols="100" ng-model="dataComment.comment" id="comment"></textarea>
+			      <label class="mdl-textfield__label" for="comment">Comment...</label>
+			  </div>
+
+			<br>
+
+			  <div class="mdl-textfield mdl-js-textfield">
+			     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="postComment(story.id)">
+			     		  Submit
+			     </button>
+			  </div>
+
+		</form>
+
+
+		<div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet" ng-repeat="comment in comments" ng-hide="commentLoading">
+			<h5>{{ comment.nama }}</h5> {{ comment.created_at }}
+			<p>{{ comment.comment }}</p>
+			<hr>
+		</div>
+		
+		
+
+		<div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet" ng-show="commentLoading">
+			<div class="mdl-spinner mdl-js-spinner is-active" style="margin-top:50px; margin-bottom:50px;"></div>
+		</div>
+		
 	</div>
+
+
 
 	<div  ng-show="storyLoading">
 		<center>
@@ -18,4 +62,5 @@
   
    
 </div>
+
 
