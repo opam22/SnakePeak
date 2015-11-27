@@ -27,6 +27,7 @@ This open source project is belong to Iris Team.
 ## Requirements
 
 - PHP >= 5.5.9
+- Composer
 
 ## Installation
 
