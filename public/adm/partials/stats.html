@@ -1,0 +1,36 @@
+
+<div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet"></div>
+
+<div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet" ng-show="loadStories">
+		<center>
+			<div class="mdl-spinner mdl-js-spinner is-active" style="margin-top:250px"></div>
+		</center>
+</div>
+
+<div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet" ng-hide="loadStories">
+	<h3>Stats</h3>
+
+	<table class="mdl-data-table mdl-js-data-table">
+	  <thead>
+	    <tr>
+	      <th class="mdl-data-table__cell--non-numeric">Title</th>
+	      <th>Status</th>
+	      <th>Created at</th>
+	      <th>View</th>
+	      <th>Loved</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+
+	    <tr ng-repeat="story in stories">
+	      <td class="mdl-data-table__cell--non-numeric">{{ story.title }}</td>
+	      <td>{{ story.status }}</td>
+	      <td>{{ story.created_at }}</td>
+	      <td>{{ story.view }}</td>
+	      <td>{{ story.love }}</td>
+	    </tr>
+
+	  </tbody>
+	</table>
+
+</div>

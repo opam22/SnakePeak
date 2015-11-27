@@ -10,7 +10,7 @@ angular.module('YourStoriesController', [])
         //get user data
         var getAuthData = $scope.getAuthData();
         $rootScope.authUser = getAuthData.responseJSON;
-        
+
         $scope.loadStories = true;
 
         //get user story
@@ -18,7 +18,6 @@ angular.module('YourStoriesController', [])
             .success(function (response) {
                 $scope.stories = response;
        			$scope.loadStories = false;
-                console.log($scope.stories);
             });
 
 
@@ -36,7 +35,6 @@ angular.module('YourStoriesController', [])
          			     .success(function (response) {
          			         $scope.stories = response;
          					 $scope.loadStories = false;
-         			         console.log($scope.stories);
          			     });
 
          		})

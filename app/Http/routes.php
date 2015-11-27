@@ -81,5 +81,8 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::get('get/restore/story/{id}', [
 			'as' => 'api-restore-story', 'uses' => 'ApiV1Controller@restoreStory'
 		]);
+	Route::get('get/stats', [
+			'as' => 'api-get-stats', 'uses' => 'ApiV1Controller@getStats'
+		]);
 
 });

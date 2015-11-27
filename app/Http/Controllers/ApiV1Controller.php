@@ -67,8 +67,8 @@ class ApiV1Controller extends Controller
     	$input['user_id'] = Auth::user()->id;
     	$input['status'] = 'published';
 
-        $image = $request->file('photo');
-        $input['photo'] = $image->getClientOriginalName();
+        /*$image = $request->file('photo');
+        $input['photo'] = $image->getClientOriginalName();*/
 
     	Story::create($input);
 
@@ -285,6 +285,17 @@ class ApiV1Controller extends Controller
 
         return $respons;
 
+    }
+
+    /**
+     * used to get story for stats section
+     * @return [type] [description]
+     */
+    public function getStats()
+    {
+        $stories = Story::where('user_id', Auth::user()->id)->where('status', 'published')->get();
+
+        return $stories;
     }
 
 }

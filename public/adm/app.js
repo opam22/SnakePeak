@@ -8,7 +8,8 @@ var ngArtisanAdm = angular.module('ngArtisanAdm', [
 		'YourStoriesController',
 		'EditStoryController',
 		'TrashController',
-		'AccountController'
+		'AccountController',
+		'StatsController'
 	]);
 
 
@@ -23,6 +24,11 @@ ngArtisanAdm.config(function ($routeProvider) {
 			{
 				controller: 'AccountController',
 				templateUrl: 'partials/account.html'
+			})
+		.when('/stats', 
+			{
+				controller: 'StatsController',
+				templateUrl: 'partials/stats.html'
 			})
 		.when('/create/story', 
 			{

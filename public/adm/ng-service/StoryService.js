@@ -13,6 +13,11 @@ angular.module('StoryService', [])
             return $http.get('/api/get/stories/mine');
         },
 
+        // get stats
+        getStats: function () {
+            return $http.get('/api/get/stats');
+        },
+
         //save story
         save: function (createStory) {
         	return $http({
