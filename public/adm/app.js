@@ -2,6 +2,7 @@ var ngArtisanAdm = angular.module('ngArtisanAdm', [
 		'ngRoute',
 		'truncate',
 		'textAngular',
+		'ngFileUpload',
 		'DashboardController',
 		'CreateStoryController',
 		'StoryService',

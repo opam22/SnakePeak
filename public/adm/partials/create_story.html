@@ -10,7 +10,7 @@
 <div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet" ng-hide="createStoryLoading">
 	<h3>Create Story</h3>
 	
-	<form>
+	<form name="myForm">
 
 	  <div class="mdl-textfield mdl-js-textfield">
 	    <input class="mdl-textfield__input" type="text" ng-model="createStory.title">
@@ -21,7 +21,7 @@
 	 	<br>
 
 	  <label>Main Image</label>
-	  <input type="file" class="form-control" ng-model="createStory.photo" file-upload multiple>
+	  <input type="file" ngf-select="" ng-model="createStory.photo" name="file" accept="image/*" required="">
 
 	    <br>
 
@@ -29,11 +29,11 @@
 
 	    <br>
 		
-		<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="submitPublisedStory()">
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="submitPublisedStory(createStory.photo)">
 		  Publish
 		</button>
 		<!-- Accent-colored raised button -->
-		<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" ng-click="submitDraftStory()">
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" ng-click="submitDraftStory(createStory.photo)">
 		  Save as Draft 
 		</button>
 

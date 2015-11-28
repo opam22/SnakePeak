@@ -67,8 +67,11 @@ class ApiV1Controller extends Controller
     	$input['user_id'] = Auth::user()->id;
     	$input['status'] = 'published';
 
-        /*$image = $request->file('photo');
-        $input['photo'] = $image->getClientOriginalName();*/
+        $image = $request->file('photo');
+        $input['photo'] = str_random(10) . '-' . $image->getClientOriginalName();
+        $destinationPath = 'story_photos';
+
+        $request->file('photo')->move($destinationPath, $input['photo']);
 
     	Story::create($input);
 
@@ -86,14 +89,20 @@ class ApiV1Controller extends Controller
     public function createStoryAsDraft(Request $request)
     {
     	$input = $request->all();
-    	$input['user_id'] = Auth::user()->id;
-    	$input['status'] = 'draft';
+        $input['user_id'] = Auth::user()->id;
+        $input['status'] = 'draft';
 
-    	Story::create($input);
+        $image = $request->file('photo');
+        $input['photo'] = str_random(10) . '-' . $image->getClientOriginalName();
+        $destinationPath = 'story_photos';
 
-    	$respons = ['success' => true];
+        $request->file('photo')->move($destinationPath, $input['photo']);
 
-    	return $respons;
+        Story::create($input);
+
+        $respons = ['success' => true];
+
+        return $respons;
 
     }
 

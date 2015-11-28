@@ -1,6 +1,6 @@
 angular.module('CreateStoryController', [])
 
-.controller('CreateStoryController', function($scope, $http, Story, $location, $rootScope) {
+.controller('CreateStoryController', function($scope, $http, Story, $location, $rootScope, Upload) {
 
         //auth cek
         var cek = $scope.authCheck();
@@ -14,43 +14,43 @@ angular.module('CreateStoryController', [])
 
 
         //used to create story with published status
-        $scope.submitPublisedStory = function () {
+        $scope.submitPublisedStory = function (file) {
 
         	$scope.createStoryLoading = true;
+            
+            if (file) {
+                file.upload = Upload.upload({
+                     url: '/api/create/story',
+                     data: {'photo': file, 'title': $scope.createStory.title, 'content': $scope.createStory.content}
+                });
 
-        	Story.save($scope.createStory)
-        		.success(function (response) {
-        			$scope.createStoryLoading = false;
-        			$scope.createStory = {};
-        			swal({   title: "Success!",   text: "Your story has been published :)",   type: "success",   confirmButtonText: "Cool" });
-        		
-        		})
-        		.error(function (responseText) {
-        			console.log(responseText);
-        			swal({   title: "Error!",   text: responseText,   type: "error",   confirmButtonText: "OK" });
-        		});
+                file.upload.then(function (response) {
+                  $scope.createStoryLoading = false;
+                  $scope.createStory = {};
+                  swal({   title: "Success!",   text: "Your story has been published :)",   type: "success",   confirmButtonText: "Cool" });
+                });
 
+            }   
         };
 
         //used to create story with draft status
-        $scope.submitDraftStory = function () {
+        $scope.submitDraftStory = function (file) {
 
-        	console.log($scope.createStory);
-        	$scope.createStoryLoading = true;
+        	   $scope.createStoryLoading = true;
+                
+                if (file) {
+                    file.upload = Upload.upload({
+                         url: '/api/create/story/draft',
+                         data: {'photo': file, 'title': $scope.createStory.title, 'content': $scope.createStory.content}
+                    });
 
-        	Story.saveAsDraft($scope.createStory)
-        		.success(function (response) {
-        			console.log('berhasil');
-        			$scope.createStoryLoading = false;
-        			$scope.createStory = {};
-        			swal({   title: "Success!",   text: "Your story has been save as draft :)",   type: "success",   confirmButtonText: "Cool" });
-        		
-        		})
-        		.error(function (responseText) {
-        			console.log(responseText);
-        			swal({   title: "Error!",   text: responseText,   type: "error",   confirmButtonText: "OK" });
-        		});
+                    file.upload.then(function (response) {
+                      $scope.createStoryLoading = false;
+                      $scope.createStory = {};
+                      swal({   title: "Success!",   text: "Your story has been published :)",   type: "success",   confirmButtonText: "Cool" });
+                    });
 
+                }
         };
 
 });

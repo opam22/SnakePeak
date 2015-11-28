@@ -18,14 +18,16 @@ angular.module('StoryService', [])
             return $http.get('/api/get/stats');
         },
 
-        //save story
-        save: function (createStory) {
+        //
+        /*//save story
+        save: function (createStory, file) {
         	return $http({
         		method: 'POST',
         		url: '/api/create/story',
         		headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
                 contentType: 'multipart/form-data',
         		data: $.param(createStory),
+                file: file,
                 async: true
         	});
         },
@@ -39,7 +41,7 @@ angular.module('StoryService', [])
         		data: $.param(createStory),
                 async: true
         	});
-        },
+        },*/
 
         // get story
         getStory: function (id) {
