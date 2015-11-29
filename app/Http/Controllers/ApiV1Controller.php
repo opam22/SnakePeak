@@ -196,7 +196,7 @@ class ApiV1Controller extends Controller
      */
     public function getStory($id)
     {
-    	$story = Story::findOrFail($id);
+    	$story = Story::with('user')->findOrFail($id);
 
     	$views = $story->view;
 

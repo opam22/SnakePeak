@@ -4,12 +4,12 @@ angular.module('TrashController', [])
 
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
-            window.location.href = '/home';
+            $location.path('/home');
         }
 
         //get user data
-        var getAuthData = $scope.getAuthData();
-        $rootScope.authUser = getAuthData.responseJSON;
+        var authData = $scope.getAuthData();
+        $rootScope.authUser = authData.responseJSON;
         
         $scope.loadStories = true;
 

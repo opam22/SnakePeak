@@ -31,7 +31,7 @@ ngArtisan.config(function ($routeProvider) {
 });
 
 
-ngArtisan.run(function ($rootScope){
+ngArtisan.run(function (){
 
     /*USED TO MATERIAL DESIGN LITE*/
     var mdlUpgradeDom = false;

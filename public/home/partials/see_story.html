@@ -2,13 +2,21 @@
 
 	<div ng-hide="storyLoading">
 		<h3>{{ story.title }}</h3>
+
+		<img src="/story_photos/{{ story.photo }}" width="700px" height="400px" style="margin-bottom:20px;">
+
 		<p ng-bind-html="story.content"> </p>
+		Posted on <i>{{ story.created_at }}</i> by <b>{{ story.user.name }}</b><br>
+		
 
-
+		<!-- LOVE SECTION -->
 		<a ng-hide="loved" ng-click="$event.preventDefault(); love(story.id)" href=""  class="text-muted"><span class="fa fa-heart-o fa-3x"></span></a>
 
-		<span class="fa fa-heart fa-3x" ng-show="loved"></span>
+		<span ng-show="loved" class="fa fa-heart fa-3x"></span>
 
+
+
+		<!-- COMMENT SECTION -->
 		<h3>#comment</h3>
 
 		<form>
@@ -36,7 +44,9 @@
 			  </div>
 
 		</form>
+		
 
+		<!-- LIST COMMENT -->
 
 		<div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet" ng-repeat="comment in comments" ng-hide="commentLoading">
 			<h5>{{ comment.nama }}</h5> {{ comment.created_at }}
@@ -53,6 +63,10 @@
 	</div>
 
 
+
+
+
+	<!-- LOADING SECTION -->
 
 	<div  ng-show="storyLoading">
 		<center>

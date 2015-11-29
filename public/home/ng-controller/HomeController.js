@@ -2,7 +2,7 @@ angular.module('HomeController', [])
 
 .controller('HomeController', function($scope, Story, $http) {
 
-				$scope.storyLoading = true;
+	$scope.storyLoading = true;
                
         /**
          * used to get story data
