@@ -35,9 +35,11 @@ Make sure you already install composer on your machine.
 
 1. cd ng-Artisan
 2. Composer install
-3. Make/setting your own .env
-4. php artisan migrate
-5. Enjoy :)
+3. Create your db
+4. Make/setting your own .env
+5. php artisan migrate
+6. php artisan serve
+7. Enjoy :)
 
 
 ### License
