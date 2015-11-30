@@ -39,7 +39,7 @@ Make sure you already install composer on your machine.
 4. Make/setting your own .env
 5. php artisan migrate
 6. php artisan serve
-7. If you are not using php artisan serve you should use virtual host.
+7. If you are using Apache or Nginx you should usinng virtual host.
 8. Enjoy :)
 
 
