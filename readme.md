@@ -42,7 +42,7 @@ Make sure you already install composer on your machine.
 7. If you are using Apache or Nginx you should using virtual host.
 8. Enjoy :)
 
-- url to Admin Page /ng-adm example ( http://localhost:300/ng-adm )
+- url to Admin Page /ng-adm example ( http://localhost:3000/ng-adm )
 
 
 ## License
