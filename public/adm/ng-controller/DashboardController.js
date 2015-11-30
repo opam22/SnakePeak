@@ -1,10 +1,10 @@
 angular.module('DashboardController', [])
 
-.controller('DashboardController', function($scope, $http, $rootScope) {
+.controller('DashboardController', function($scope, $http, $rootScope, $window) {
 
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
-            $location.path('/home');
+            $window.location.href = '/home';
         }
 
         //get user data

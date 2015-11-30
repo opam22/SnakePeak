@@ -1,10 +1,10 @@
 angular.module('EditStoryController', [])
 
-.controller('EditStoryController', function($scope, $http, Story, $routeParams, $rootScope) {
+.controller('EditStoryController', function($scope, $http, Story, $routeParams, $rootScope, $window) {
 
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
-            $location.path('/home');
+            $window.location.href = '/home';
         }
 
         //get user data

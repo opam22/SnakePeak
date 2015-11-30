@@ -1,10 +1,10 @@
 angular.module('StatsController', [])
 
-.controller('StatsController', function($scope, $http, Story, $rootScope) {
+.controller('StatsController', function($scope, $http, Story, $rootScope, $window) {
 
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
-            $location.path('/home');
+            $window.location.href = '/home';
         }
 
         //get user data

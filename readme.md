@@ -39,9 +39,10 @@ Make sure you already install composer on your machine.
 4. Make/setting your own .env
 5. php artisan migrate
 6. php artisan serve
-7. Enjoy :)
+7. If you are not using php artisan serve you should use virtual host.
+8. Enjoy :)
 
 
-### License
+## License
 
 ng-Artisan is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

@@ -1,11 +1,11 @@
 angular.module('CreateStoryController', [])
 
-.controller('CreateStoryController', function($scope, $http, Story, $location, $rootScope, Upload) {
+.controller('CreateStoryController', function($scope, $http, Story, $rootScope, Upload, $window) {
 
         //auth cek
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
-            $location.path('/home');
+            $window.location.href = '/home';
         }
 
         //get user data
