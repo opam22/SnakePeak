@@ -10,7 +10,7 @@
 	<div class="col-md-4">
 	<center>
 
-		<h1>Login</h1>
+		<h1>Create Account</h1>
 
 		@if($errors->any())
 		  
@@ -37,7 +37,12 @@
 
 		@endif
 
-		{!! Form::open(['route' => 'admin-login-do']) !!}
+		{!! Form::open(['route' => 'admin-create-account-do']) !!}
+
+		<div class="form-group"> 
+			{!! Form::label('name', 'Name..') !!}
+			{!! Form::text('name', null, ['class' => 'form-control']) !!}
+		</div>
 
 		<div class="form-group"> 
 			{!! Form::label('email', 'Email..') !!}
@@ -50,12 +55,16 @@
 		</div>
 
 		<div class="form-group"> 
-			{!! Form::submit('Log in', ['class' => 'btn btn-danger form-control']) !!}
+			{!! Form::label('password_confirmation', 'Re-Password..') !!}
+			{!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
+		</div>
+
+		<div class="form-group"> 
+			{!! Form::submit('Create', ['class' => 'btn btn-danger form-control']) !!}
 		</div>
 
 		{!! Form::close() !!}
 
-		<a href="{{ route('admin-create-account') }}" class="btn btn-success">Create Account</a>
 
 	</center>
 	</div>

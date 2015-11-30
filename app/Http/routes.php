@@ -25,6 +25,12 @@ Route::post('ng-adm', [
 Route::get('ng-adm/logout', [
 		'as' => 'admin-logout', 'uses' => 'AdminLogoutController@doLogout'
 	]);
+Route::get('ng-adm/create/account', [
+		'as' => 'admin-create-account', 'uses' => 'AdminCreateAccountController@index'
+	]);
+Route::post('ng-adm/create/account', [
+		'as' => 'admin-create-account-do', 'uses' => 'AdminCreateAccountController@doCreateAccount'
+	]);
 
 
 Route::group(array('prefix' => 'api'), function() {
