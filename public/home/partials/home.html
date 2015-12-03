@@ -6,7 +6,7 @@
 
 <div ng-hide="storyLoading" class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
 
-		<div ng-hide="storyLoading" class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" ng-repeat="story in stories">
+		<div ng-hide="storyLoading" class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" ng-repeat="story in stories | orderBy:'-created_at'">
 			<h1>{{ story.title }}</h1>
 			<p ng-bind-html="story.content | words:50"> </p>
 			<a href="#see/story/{{ story.id }}" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">See</a>

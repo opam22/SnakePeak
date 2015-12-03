@@ -40,7 +40,6 @@ angular.module('SeeStoryController', [])
             var storyId = story_id;
             $scope.commentLoading = true;
             $scope.dataComment.story_id =  storyId;
-            console.log($scope.dataComment);
             Comment.save($scope.dataComment)
                 .success(function (response) {
                     $scope.dataComment = {};

@@ -74,7 +74,7 @@ ngArtisanAdm.run(function ($rootScope){
     $rootScope.getAuthData = function () {
     	var data = $.ajax({
     		url: '/api/auth/data',
-    		async:false
+    		async: false
     	});
     	return data;
     };
