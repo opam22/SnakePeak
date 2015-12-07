@@ -38,11 +38,13 @@ Make sure you already install composer on your machine.
 3. Create your db
 4. Make/setting your own .env
 5. php artisan migrate
+6. php artisan key:generate
 6. php artisan serve
 7. If you are using Apache or Nginx you should using virtual host.
-8. Enjoy :)
+8. We really recommend to use virtual host
+9. enjoy :)
 
-- url to Admin Page /ng-adm example ( http://localhost:3000/ng-adm )
+- url to Admin Page /ng-adm. example (http://localhost:3000/ng-adm)
 
 
 ## License

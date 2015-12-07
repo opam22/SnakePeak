@@ -21,6 +21,7 @@ angular.module('CreateStoryController', [])
             if (file) {
                 file.upload = Upload.upload({
                      url: '/api/create/story',
+                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                      data: {'photo': file, 'title': $scope.createStory.title, 'content': $scope.createStory.content}
                 });
 

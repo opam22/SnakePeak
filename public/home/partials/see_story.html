@@ -19,12 +19,17 @@
 		<!-- COMMENT SECTION -->
 		<h3>#comment</h3>
 
-		<form>
+		<form name="commentForm">
 
 		<!-- <input type="hidden" value="{{ story.id }}" ng-model="dataComment.story_id"> -->
 
 			  <div class="mdl-textfield mdl-js-textfield">
-			    <input class="mdl-textfield__input" type="text" ng-model="dataComment.nama" id="name">
+			    <input name="nama" class="mdl-textfield__input" type="text" ng-model="dataComment.nama" id="name" ng-minlength="3" ng-maxlength="20" required> 
+			    <!-- show an error if name is too short -->
+			    <p ng-show="commentForm.nama.$error.minlength">Name is too short.</p>
+			    <!-- show an error if name is too long -->
+			    <p ng-show="commentForm.nama.$error.maxlength">Name is too long.</p>
+
 			    <label class="mdl-textfield__label" for="name">Name...</label>
 			  </div>
 
@@ -38,7 +43,7 @@
 			<br>
 
 			  <div class="mdl-textfield mdl-js-textfield">
-			     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="postComment(story.id)">
+			     <button ng-if="! commentForm.nama.$error.minlength && ! commentForm.nama.$error.maxlength" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="postComment(story.id)">
 			     		  Submit
 			     </button>
 			  </div>
