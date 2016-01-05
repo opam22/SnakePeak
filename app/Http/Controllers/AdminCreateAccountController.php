@@ -42,7 +42,6 @@ class AdminCreateAccountController extends Controller
     	session()->flash('flash_message', 'Successfully created your account, now you have to login ^^');
 
     	return redirect()->route('admin-login');
-
-
     }
+    
 }
