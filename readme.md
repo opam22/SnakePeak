@@ -30,7 +30,7 @@ This open source project is belong to Iris Team.
 
 Make sure you already install composer on your machine.
 
-1. cd ng-Artisan
+1. cd SneakPeak
 2. Composer install
 3. Create your db
 4. Make/setting your own .env
