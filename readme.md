@@ -2,7 +2,7 @@
 
 SneakPeak is a content management system that build from Angular.js, Laravel, Bootstrap & Material Design Lite.
 We call this A-SPA (Almost-Single Page Application).
-This open source project is belong to Iris Team.
+This open source project is belong the team below.
 
 ## The Team
 
@@ -30,7 +30,7 @@ This open source project is belong to Iris Team.
 
 Make sure you already install composer on your machine.
 
-1. cd SneakPeak
+1. cd SneakPeak	
 2. Composer install
 3. Create your db
 4. Make/setting your own .env
