@@ -29,7 +29,7 @@ This open source project is belong the team below.
 
 Make sure you already install composer on your machine.
 
-1. cd SneakPeak	
+1. cd SnakePeak	
 2. Composer install
 3. Create your db
 4. Make/setting your own .env
@@ -45,4 +45,4 @@ Make sure you already install composer on your machine.
 
 ## License
 
-SneakPeak is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+SnakePeak is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
