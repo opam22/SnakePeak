@@ -1,6 +1,6 @@
 angular.module('StatsController', [])
 
-.controller('StatsController', function($scope, $http, Story, $rootScope, $window) {
+.controller('StatsController', function($scope, $http, Story, $rootScope, $window, $interval) {
 
         var cek = $scope.authCheck();
         if(cek.responseText != 1) {
@@ -13,11 +13,14 @@ angular.module('StatsController', [])
         
         $scope.loadStories = true;
 
-        //get user story
-        Story.getStats()
-            .success(function (response) {
-                $scope.stories = response;
-       			$scope.loadStories = false;
-            });
+        $interval(function() {
+            //get user story
+            Story.getStats()
+                .success(function (response) {
+                    $scope.stories = response;
+                    $scope.loadStories = false;
+                });
+        }, 1000);
+        
 
 });
