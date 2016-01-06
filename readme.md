@@ -1,6 +1,6 @@
-## SneakPeak
+## SnakePeak
 
-SneakPeak is a content management system that build from Angular.js, Laravel, Bootstrap & Material Design Lite.
+SnakePeak is a content management system that build from Angular.js, Laravel, Bootstrap & Material Design Lite.
 This open source project is belong the team below.
 
 ## The Team
